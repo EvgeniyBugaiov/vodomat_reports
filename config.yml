@@ -1,0 +1,11 @@
+o:
+  source: /home/jerrye/Temp/o_source
+  destination: /home/jerrye/Temp/o_destination
+
+z:
+  source: /home/jerrye/Temp/z_source
+  destination: /home/jerrye/Temp/z_destination
+
+r:
+  source: /home/jerrye/Temp/r_source
+  destination: /home/jerrye/Temp/r_destination
