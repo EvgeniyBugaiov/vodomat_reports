@@ -1,16 +1,36 @@
 import os
 import datetime
 from shutil import move, copyfile
+from zipfile import ZipFile
 
 
 class Reports:
-    def __init__(self, source, destination):
+    def __init__(self, source, destination, archive):
         self.source = source
         self.destination = destination
+        self.archive = os.path.join(destination, archive)
     
     @staticmethod
     def date_created(file):
         return datetime.date.fromtimestamp(os.stat(file).st_mtime)
+
+    def create_week_archive(self):
+        for path, _, files in os.walk(self.archive):
+            for file in files:
+                if file.endswith('.xml'):
+                    file_path = os.path.join(path, file)
+                    file_date_created = self.date_created(file_path)
+                    zip_file = '{year}-{month} ({week}).zip'.format(year = file_date_created.year,
+                                                                    month = file_date_created.month,
+                                                                    week = file_date_created.isocalendar()[1])
+                    zip_file_path = os.path.join(self.archive, zip_file)
+                    if os.path.exists(zip_file_path):
+                        with ZipFile(zip_file_path, 'a') as week_archive:
+                            week_archive.write(file_path, file)
+                    else:
+                        with ZipFile(zip_file_path, 'w') as week_archive:
+                            week_archive.write(file_path, file)
+                    os.remove(file_path)
     
     def move(self):
         for path, _, files in os.walk(self.source):
