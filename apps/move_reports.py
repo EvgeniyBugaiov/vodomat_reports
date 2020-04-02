@@ -16,7 +16,10 @@ class Reports:
         for path, _, files in os.walk(self.source):
             for file in files:
                 if file.endswith('.xml'):
-                    move(os.path.join(path, file), self.destination)
+                    try:
+                        move(os.path.join(path, file), self.destination)
+                    except shutil.Error:
+                        continue
     
     def move_period(self, end_perion=datetime.date.today()):
         for path, _, files in os.walk(self.source):

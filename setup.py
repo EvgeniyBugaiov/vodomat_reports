@@ -2,12 +2,12 @@ from setuptools import setup
 
 install_requires = [
     'pyyaml',
-    'shedule'
+    'schedule'
 ]
 
 setup(
+    name='vodomat-reports',
     version='0.1',
-    description='Vodomat Reports Utilities'
-    author='Evgeniy Bugaiov'
+    author='Evgeniy Bugaiov',
     install_requires=install_requires,
 )
