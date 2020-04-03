@@ -10,7 +10,7 @@ z_reports = Reports(config['z']['source'], config['z']['destination'], config['a
 r_reports = Reports(config['r']['source'], config['r']['destination'], config['archive'])
 
 # Schedule
-schedule.every(10).minutes.do(o_reports.move)
+schedule.every(10).minutes.do(o_reports.move_all)
 # --------------------------------------------------------
 schedule.every().day.at('03:00').do(o_reports.create_week_archive)
 schedule.every().day.at('03:10').do(z_reports.create_week_archive)
