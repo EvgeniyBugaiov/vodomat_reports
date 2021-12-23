@@ -27,7 +27,7 @@ schedule.every().day.at('12:00').do(z_reports.move_or_copy)
 schedule.every().day.at('14:00').do(z_reports.move_or_copy)
 schedule.every().day.at('16:00').do(z_reports.move_or_copy)
 # --------------------------------------------------------
-schedule.every().day.at('10.10').do(x_reports.delete_period)
+schedule.every().day.at('10:10').do(x_reports.delete_period)
 
 if __name__ == '__main__':
     while True:
