@@ -1,13 +1,13 @@
 o:
-  source: /home/jerrye/Temp/o_source
-  destination: /home/jerrye/Temp/o_destination
+  source: /mnt/recorder/data/O
+  destination: /mnt/o_reports
 
 z:
-  source: /home/jerrye/Temp/z_source
-  destination: /home/jerrye/Temp/z_destination
+  source: /mnt/recorder/data/Z
+  destination: /mnt/z_reports
 
 r:
-  source: /home/jerrye/Temp/r_source
-  destination: /home/jerrye/Temp/r_destination
+  source: /mnt/recorder/data/R
+  destination: /mnt/r_reports
 
 archive: archive

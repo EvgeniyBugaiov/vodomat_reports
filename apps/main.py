@@ -20,6 +20,7 @@ schedule.every().day.at('05:00').do(r_reports.move_period)
 # --------------------------------------------------------
 schedule.every().day.at('06:00').do(z_reports.move_or_copy)
 schedule.every().day.at('08:00').do(z_reports.move_or_copy)
+schedule.every().day.at('11:00').do(z_reports.move_or_copy)
 schedule.every().day.at('12:00').do(z_reports.move_or_copy)
 schedule.every().day.at('14:00').do(z_reports.move_or_copy)
 schedule.every().day.at('16:00').do(z_reports.move_or_copy)
