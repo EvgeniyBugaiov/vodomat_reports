@@ -8,6 +8,8 @@ o_reports = Reports(config['o']['source'], config['o']['destination'], config['a
 z_reports = Reports(config['z']['source'], config['z']['destination'], config['archive'])
 # R
 r_reports = Reports(config['r']['source'], config['r']['destination'], config['archive'])
+# X
+x_reports = Reports(config['x']['source'])
 
 # Schedule
 schedule.every(10).minutes.do(o_reports.move_all)
@@ -24,6 +26,8 @@ schedule.every().day.at('11:00').do(z_reports.move_or_copy)
 schedule.every().day.at('12:00').do(z_reports.move_or_copy)
 schedule.every().day.at('14:00').do(z_reports.move_or_copy)
 schedule.every().day.at('16:00').do(z_reports.move_or_copy)
+# --------------------------------------------------------
+schedule.every().day.at('10.10').do(x_reports.delete_period)
 
 if __name__ == '__main__':
     while True:

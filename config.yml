@@ -10,4 +10,7 @@ r:
   source: /mnt/recorder/data/R
   destination: /mnt/r_reports
 
+x:
+  source: /mnt/recorder/data/X
+
 archive: archive
